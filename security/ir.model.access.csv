@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inventario_insumos,inventario.insumos,model_inventario_insumos,,1,1,1,1
+access_inventario_proveedor,inventario.proveedor,model_inventario_proveedor,,1,1,1,1
