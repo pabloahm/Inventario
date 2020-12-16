@@ -10,6 +10,7 @@
           <field name="cantidad_insumo"/>
           <field name="codigo_proveedor"/>
           <field name="fecha"/>
+          <field name="tipo_insumos_id"/>
         
         </tree>
       </field>
