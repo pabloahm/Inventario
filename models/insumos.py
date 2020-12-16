@@ -2,10 +2,10 @@
 
 from odoo import models, fields, api
 
-#class TipoInsumos(models.Model):
-#	_name= 'inventario.tipo_insumos'
+class TipoInsumos(models.Model):
+	_name= 'inventario.tipo_insumos'
 
-#	name = fields.Char(string = "Nombre", required=True)
+	name = fields.Char(string = "Nombre", required=True)
 
 
 class Insumos(models.Model):
@@ -18,5 +18,5 @@ class Insumos(models.Model):
 	codigo_proveedor = fields.Integer(string = "Codigo proveedor", required = True)
 	fecha = fields.Date("Fecha operacion")
 
-	#tipo_insumos_id = fields.Many2one(
-	#	'inventario.tipo_insumos', string='Tipo de Insumo')
+	tipo_insumos_id = fields.Many2one(
+		'inventario.tipo_insumos', string="Tipo de Insumo")
