@@ -2,36 +2,33 @@
 
 from odoo import models, fields, api
 
+
 class TipoInsumos(models.Model):
-	_name= 'inventario.tipo_insumos'
+    _name = 'inventario.tipo_insumos'
 
-	name = fields.Char(string = "Nombre", required=True)
+    name = fields.Char(string="Nombre", required=True)
 
-#class Proveedor(models.Model):
-#	_name = 'inventario.proveedor'
 
-#	name = fields.Char(string = "Nombre Proveedor", requiered = True)
-#	codigo_proveedor = fields.Integer(string = "Codigo proveedor", required = True)
+class Proveedor(models.Model):
+    _name = 'inventario.proveedor'
 
-#    insumos_ids = fields.One2many(
-#		'inventario.insumos'
-#		'proveedor_id'
-#		string="Proveedor"
-#	)
+    name = fields.Char(string="Nombre Proveedor", requiered=True)
+    codigo_proveedor = fields.Integer(string="Codigo proveedor", required=True)
+    insumos_ids = fields.One2many(
+        'inventario.insumos', 'proveedor_id', string="Proveedor")
 
 
 class Insumos(models.Model):
-	_name = 'inventario.insumos'
+    _name = 'inventario.insumos'
 
-	name = fields.Char(string = "Nombre Insumo", requiered = True)
+    name = fields.Char(string="Nombre Insumo", requiered=True)
 
-	codigo_insumo = fields.Integer(string = "Codigo Insumo", required = True)
-	cantidad_insumo = fields.Integer(string = "Cantidad de insumo", requiered = True)
-	codigo_proveedor = fields.Integer(string = "Codigo proveedor", required = True)
-	fecha = fields.Date("Fecha operacion")
+    codigo_insumo = fields.Integer(string="Codigo Insumo", required=True)
+    cantidad_insumo = fields.Integer(
+        string="Cantidad de insumo", requiered=True)
+    fecha = fields.Date("Fecha operacion")
 
-	tipo_insumos_id = fields.Many2one(
-		'inventario.tipo_insumos', string="Tipo de Insumo")
-	#proveedor_id = fields.Many2one(
-	#	'inventario.proveedor', string="Codigo Proveedor", required =True
-	#)
+    tipo_insumos_id = fields.Many2one(
+        'inventario.tipo_insumos', string="Tipo de Insumo")
+    proveedor_id = fields.Many2one(
+        'inventario.proveedor', string="Codigo Proveedor")
