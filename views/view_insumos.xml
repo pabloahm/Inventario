@@ -1,5 +1,6 @@
 <odoo>
   <data>
+    <!-- Listado de insumos -->
     <record model="ir.ui.view" id="inventario.insumos_list">
       <field name="name">Insumos Restaurante</field>
       <field name="model">inventario.insumos</field>
@@ -15,7 +16,30 @@
         </tree>
       </field>
     </record>
-
+    
+    <!-- Formulario de insumos -->
+   <record id="inventario.insumos_view" model="ir.ui.view">
+      <field name="name">Insumos</field>
+      <field name="model">inventario.insumos</field>
+      <field name="arch" type="xml">
+        <form string="Insumos">
+      <sheet>
+          <group col="6">
+              <field name="name"/>
+              <field name="codigo_insumo"/>
+              <field name="cantidad_insumo"/>
+          </group>
+          <group>
+              <field name="codigo_proveedor"/>
+              <field name="fecha"/>
+              <field name="tipo_insumos_id"/>
+          </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+    
         <record model="ir.actions.act_window" id="inventario.insumos_action_window">
             <field name="name">Insumos </field>
             <field name="res_model">inventario.insumos</field>
@@ -34,9 +58,45 @@
                 }
             </field>
         </record>
+    
+      <!-- Listado de Proveedores -->
+ <!--   <record model="ir.ui.view" id="inventario.proveedor_list">
+      <field name="name">Proveedor</field>
+      <field name="model">inventario.proveedor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="codigo_proveedor"/>
+
+        
+        </tree>
+      </field>
+    </record>
+
+        <record model="ir.actions.act_window" id="inventario.proveedor_action_window">
+            <field name="name">Proveedor</field>
+            <field name="res_model">inventario.proveedor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.server" id="inventario.insumos_action_server">
+            <field name="name">proveedor server</field>
+            <field name="model_id" ref="model_inventario_proveedor"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": self._name,
+                }
+            </field>
+        </record> 
+-->
 
         <menuitem name="Inventario Restaurante" id="inventario.menu_root"/>
         <menuitem name="Insumos" id="inventario.menu_insumos" parent="inventario.menu_root" action="inventario.insumos_action_window"/>
+        <menuitem name="Proovedor" id="inventario.menu_codigo_proveedor" parent="inventario.menu_root" action="inventario.codigo_proveedor_action_window"/>
 
+    
    </data>
 </odoo>
