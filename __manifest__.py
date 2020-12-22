@@ -9,7 +9,7 @@
          Modulo que permite la administracion del inventario del restaurante
     """,
 
-    'author': "bastiaN",
+    'author': "picrack",
     'website': "https://www.utalca.cl",
 
     # Categories can be used to filter modules in modules listing
