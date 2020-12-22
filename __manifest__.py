@@ -6,7 +6,7 @@
         Sistema de inventario Restaurante PABAKA""",
 
     'description': """
-         Modulo que permite la administracion del inventario del restaurante
+         Módulo que permite la administración del inventario del Restaurante PABAKA
     """,
 
     'author': "picrack",
