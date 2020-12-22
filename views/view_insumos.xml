@@ -95,7 +95,7 @@
 
         <menuitem name="Inventario Restaurante" id="inventario.menu_root"/>
         <menuitem name="Insumos" id="inventario.menu_insumos" parent="inventario.menu_root" action="inventario.insumos_action_window"/>
-        <menuitem name="Proovedor" id="inventario.menu_codigo_proveedor" parent="inventario.menu_root" action="inventario.codigo_proveedor_action_window"/>
+       <!-- <menuitem name="Proovedor" id="inventario.menu_codigo_proveedor" parent="inventario.menu_root" action="inventario.codigo_proveedor_action_window"/> -->
 
     
    </data>
