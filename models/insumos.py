@@ -24,8 +24,7 @@ class Insumos(models.Model):
     name = fields.Char(string="Nombre Insumo", requiered=True)
 
     codigo_insumo = fields.Integer(string="Codigo Insumo", required=True)
-    cantidad_insumo = fields.Integer(
-        string="Cantidad de insumo", requiered=True)
+    cantidad_insumo = fields.Integer(string="Cantidad de insumo", requiered=True)
     fecha = fields.Date("Fecha operacion")
 
     tipo_insumos_id = fields.Many2one(
