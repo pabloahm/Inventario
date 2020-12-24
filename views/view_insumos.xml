@@ -162,7 +162,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model="ir.actions.server" id="inventario.proverdor_action_server">
+        <record model="ir.actions.server" id="inventario.proveedor_action_server">
             <field name="name">proveedor server</field>
             <field name="model_id" ref="model_inventario_proveedor"/>
             <field name="state">code</field>
@@ -179,7 +179,7 @@
         <menuitem name="Inventario Restaurante" id="inventario.menu_root"/>
         <menuitem name="Insumos" id="inventario.menu_insumos" parent="inventario.menu_root" action="inventario.insumos_action_window"/>
         <menuitem name="Tipo Insumos" id="inventario.menu_tipo_insumos" parent="inventario.menu_root" action="inventario.tipo_insumos_action_window"/>
-        <menuitem name="Proovedor" id="inventario.menu_proveedor" parent="inventario.menu_root" action="inventario.proveedor_action_window"/>
+        <menuitem name="Proveedor" id="inventario.menu_proveedor" parent="inventario.menu_root" action="inventario.proveedor_action_window"/>
 
     
    </data>
