@@ -7,6 +7,8 @@ class TipoInsumos(models.Model):
     _name = 'inventario.tipo_insumos'
 
     name = fields.Char(string="Nombre", required=True)
+    insumos_ids = fields.One2many(
+        'inventario.insumos', 'tipo_insumos_id', string="Insumos")
 
 
 class Proveedor(models.Model):
