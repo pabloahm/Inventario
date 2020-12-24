@@ -59,6 +59,63 @@
             </field>
         </record>
     
+    <!-- Listado Tipo Insumos -->
+    <record model="ir.ui.view" id="inventario.tipo_insumos_list">
+      <field name="name">Tipo Insumo</field>
+      <field name="model">inventario.tipo_insumos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inventario.tipo_insumos_view">
+      <field name="name">Tipo Insumos</field>
+      <field name="model">inventario.tipo_insumos</field>
+      <field name="arch" type="xml">
+        <form string="Tipo Inumos">
+          <sheet>
+            <separator string="Tipo Insumo"/>
+            <group>
+              <field name="name"/>
+            </group>
+            <separator string="Insumos Asociados"/>
+            <group>
+              <field name="insumos_ids" nolabel="1">
+                <tree name="Insumos" editable="bottom">
+                  <field name="name"/>
+                  <field name="codigo_insumo"/>
+                  <field name="cantidad_insumo"/>
+                  <field name="proveedor_id"/>
+                  <field name="fecha"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inventario.tipo_insumos_action_window">
+      <field name="name">Tipo Insumos</field>
+      <field name="res_model">inventario.tipo_insumos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.server" id="inventario.tipo_insumos_action_server">
+      <field name="name">Tipo Insumos server</field>
+      <field name="model_id" ref="model_inventario_tipo_insumos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    
       <!-- Listado de Proveedores -->
     <record model="ir.ui.view" id="inventario.proveedor_list">
       <field name="name">Proveedor</field>
@@ -68,6 +125,34 @@
           <field name="name"/>
           <field name="codigo_proveedor"/>
         </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="inventario.proveedor_view">
+      <field name="name">Tipo Insumos</field>
+      <field name="model">inventario.proveedor</field>
+      <field name="arch" type="xml">
+        <form string="Proveedores">
+          <sheet>
+            <separator string="Proveedor"/>
+            <group>
+              <field name="name"/>
+              <field name="codigo_proveedor"/>
+            </group>
+            <separator string="Insumos Asociados"/>
+            <group>
+              <field name="insumos_ids" nolabel="1">
+                <tree name="Insumos" editable="bottom">
+                  <field name="name"/>
+                  <field name="codigo_insumo"/>
+                  <field name="cantidad_insumo"/>
+                  <field name="fecha"/>
+                  <field name="tipo_insumos_id"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -93,6 +178,7 @@
 
         <menuitem name="Inventario Restaurante" id="inventario.menu_root"/>
         <menuitem name="Insumos" id="inventario.menu_insumos" parent="inventario.menu_root" action="inventario.insumos_action_window"/>
+        <menuitem name="Tipo Insumos" id="inventario.menu_tipo_insumos" parent="inventario.menu_root" action="inventario.tipo_insumos_action_window"/>
         <menuitem name="Proovedor" id="inventario.menu_proveedor" parent="inventario.menu_root" action="inventario.proveedor_action_window"/>
 
     
